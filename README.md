@@ -210,3 +210,33 @@ Additional instructions, terms, and project notes:
 ## License
 
 [MIT](./LICENSE)
+
+ ## Custom Modifications
+
+For Phase 4 of this project, I created my own modified version of the example project.
+
+### Changes Made
+
+I created a copy of the example file and renamed it:
+
+- `app_case.py` → `app_aheid.py`
+
+I then made a technical modification by adding an additional logging statement to improve observability of the program execution.
+
+Added code:
+
+```python
+LOG.info("Alecia custom modification: additional analysis checkpoint reached")
+```
+
+### Why I Made This Change
+
+I wanted to better understand how the project workflow runs and how logging can help track the execution process.
+
+### Results
+
+After running the modified file, the project executed successfully and the new custom log message appeared in both the terminal output and the `project.log` file.
+
+### What I Learned
+
+This modification helped me better understand how small code changes can affect program output while keeping the overall workflow intact.

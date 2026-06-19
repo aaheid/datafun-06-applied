@@ -22,3 +22,10 @@ to get these projects running on your machine.
 The API page is not always easy to read at first,
 but it becomes useful as you get more comfortable with project structure,
 modules, functions, and docstrings.
+## Custom Project Modification
+
+For Phase 4, I created a modified version of the example Python file called `app_aheid.py`.
+
+I added an additional logging statement to improve observability and verify my modified project was running independently from the original example.
+
+This helped me better understand how logging can be used to track execution and how small changes can safely modify a working project.
