@@ -239,4 +239,54 @@ After running the modified file, the project executed successfully and the new c
 
 ### What I Learned
 
-This modification helped me better understand how small code changes can affect program output while keeping the overall workflow intact.
+## Phase 5 Custom Project – Airline Safety Analysis
+
+For Phase 5, I created a custom exploratory data analysis project using a real-world dataset from FiveThirtyEight that focuses on airline safety records.
+
+### Dataset Used
+
+I used the Airline Safety dataset which contains information about airline incidents, fatal accidents, and fatalities during two time periods:
+
+- 1985–1999
+- 2000–2014
+
+The dataset includes information such as:
+
+- airline name
+- available seat kilometers per week
+- incidents by time period
+- fatal accidents by time period
+- fatalities by time period
+
+### Modifications Made
+
+I created a new Python file:
+
+- `app_airline_aheid.py`
+
+I changed the project so it analyzes airline safety data instead of the example CO2 dataset.
+
+Changes included:
+
+- importing a new CSV dataset
+- changing grouping variables to airline
+- selecting new numeric variables for analysis
+- modifying scatter plot and box plot variables
+- improving chart readability by rotating airline names on the x-axis
+- saving visualizations as image files for project documentation
+
+### Key Findings
+
+The analysis showed that some airlines experienced significantly higher accident and fatality rates than others.
+
+Comparing two historical time periods helped identify changes in airline safety trends over time.
+
+### Skills Practiced
+
+This project helped me practice:
+
+- exploratory data analysis
+- working with real-world CSV data
+- modifying Python analysis scripts
+- creating visualizations with Seaborn and Matplotlib
+- documenting project results

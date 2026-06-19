@@ -895,3 +895,1178 @@ From this heatmap, we can see that flipper_length_mm and body_mass_g show strong
 2026-06-19 13:45:25 | INFO | P06 | ========================
 2026-06-19 13:45:25 | INFO | P06 | Executed successfully!
 2026-06-19 13:45:25 | INFO | P06 | ========================
+2026-06-19 14:36:59 | INFO | P06 | === RUN START ===
+2026-06-19 14:36:59 | INFO | P06 | project=P06
+2026-06-19 14:36:59 | INFO | P06 | repo_dir=datafun-06-applied
+2026-06-19 14:36:59 | INFO | P06 | python=3.14.5
+2026-06-19 14:36:59 | INFO | P06 | os=Windows 11
+2026-06-19 14:36:59 | INFO | P06 | shell=powershell
+2026-06-19 14:36:59 | INFO | P06 | cwd=.
+2026-06-19 14:36:59 | INFO | P06 | github_actions=False
+2026-06-19 14:36:59 | INFO | P06 | === RUN START ===
+2026-06-19 14:36:59 | INFO | P06 | project=EDA
+2026-06-19 14:36:59 | INFO | P06 | repo_dir=datafun-06-applied
+2026-06-19 14:36:59 | INFO | P06 | python=3.14.5
+2026-06-19 14:36:59 | INFO | P06 | os=Windows 11
+2026-06-19 14:36:59 | INFO | P06 | shell=powershell
+2026-06-19 14:36:59 | INFO | P06 | cwd=.
+2026-06-19 14:36:59 | INFO | P06 | github_actions=False
+2026-06-19 14:36:59 | INFO | P06 | ========================
+2026-06-19 14:36:59 | INFO | P06 | START main()
+2026-06-19 14:36:59 | INFO | P06 | ========================
+2026-06-19 14:36:59 | INFO | P06 | --- Section 2: Load dataset: airline-safety ---
+2026-06-19 14:36:59 | INFO | P06 | Loading dataset: airline-safety
+2026-06-19 14:36:59 | INFO | P06 | Loaded: 56 rows, 8 columns
+2026-06-19 14:36:59 | INFO | P06 | --- Section 3: Inspect shape and basic structure ---
+2026-06-19 14:36:59 | INFO | P06 | Previewing first few rows of the dataset
+2026-06-19 14:36:59 | DEBUG | P06 | 
+                 airline  avail_seat_km_per_week  incidents_85_99  fatal_accidents_85_99  fatalities_85_99  \
+0             Aer Lingus               320906734                2                      0                 0   
+1              Aeroflot*              1197672318               76                     14               128   
+2  Aerolineas Argentinas               385803648                6                      0                 0   
+3            Aeromexico*               596871813                3                      1                64   
+4             Air Canada              1865253802                2                      0                 0   
+
+   incidents_00_14  fatal_accidents_00_14  fatalities_00_14  
+0                0                      0                 0  
+1                6                      1                88  
+2                1                      0                 0  
+3                5                      0                 0  
+4                2                      0                 0  
+2026-06-19 14:36:59 | INFO | P06 | Column names
+2026-06-19 14:36:59 | DEBUG | P06 | ['airline', 'avail_seat_km_per_week', 'incidents_85_99', 'fatal_accidents_85_99', 'fatalities_85_99', 'incidents_00_14', 'fatal_accidents_00_14', 'fatalities_00_14']
+2026-06-19 14:36:59 | INFO | P06 | DataFrame info (types and non-null counts)
+2026-06-19 14:36:59 | INFO | P06 | Dataset shape: 56 rows, 8 columns
+2026-06-19 14:36:59 | INFO | P06 | --- Section 4: Create Data Dictionary and Check Data Quality ---
+2026-06-19 14:36:59 | INFO | P06 | Building starter data dictionary
+2026-06-19 14:36:59 | DEBUG | P06 | 
+                   column  dtype  missing_count  missing_pct
+0                 airline    str              0          0.0
+1  avail_seat_km_per_week  int64              0          0.0
+2         incidents_85_99  int64              0          0.0
+3   fatal_accidents_85_99  int64              0          0.0
+4        fatalities_85_99  int64              0          0.0
+5         incidents_00_14  int64              0          0.0
+6   fatal_accidents_00_14  int64              0          0.0
+7        fatalities_00_14  int64              0          0.0
+2026-06-19 14:36:59 | INFO | P06 | Missing values per column:
+2026-06-19 14:36:59 | INFO | P06 | 
+airline                   0
+avail_seat_km_per_week    0
+incidents_85_99           0
+fatal_accidents_85_99     0
+fatalities_85_99          0
+incidents_00_14           0
+fatal_accidents_00_14     0
+fatalities_00_14          0
+dtype: int64
+2026-06-19 14:36:59 | INFO | P06 | Checking missing values per column
+2026-06-19 14:36:59 | DEBUG | P06 | 
+airline                   0
+avail_seat_km_per_week    0
+incidents_85_99           0
+fatal_accidents_85_99     0
+fatalities_85_99          0
+incidents_00_14           0
+fatal_accidents_00_14     0
+fatalities_00_14          0
+dtype: int64
+2026-06-19 14:36:59 | INFO | P06 | Duplicate rows detected: 0
+2026-06-19 14:36:59 | INFO | P06 | Call describe() for numeric columns
+2026-06-19 14:36:59 | DEBUG | P06 | 
+       avail_seat_km_per_week  incidents_85_99  fatal_accidents_85_99  fatalities_85_99  incidents_00_14
+count            5.600000e+01        56.000000              56.000000         56.000000        56.000000
+mean             1.384621e+09         7.178571               2.178571        112.410714         4.125000
+std              1.465317e+09        11.035656               2.861069        146.691114         4.544977
+min              2.593733e+08         0.000000               0.000000          0.000000         0.000000
+25%              4.740362e+08         2.000000               0.000000          0.000000         1.000000
+50%              8.029089e+08         4.000000               1.000000         48.500000         3.000000
+75%              1.847239e+09         8.000000               3.000000        184.250000         5.250000
+max              7.139291e+09        76.000000              14.000000        535.000000        24.000000
+
+2026-06-19 14:36:59 | INFO | P06 | --- Section 5: Create a cleaned view for EDA ---
+2026-06-19 14:36:59 | INFO | P06 | Creating cleaned view for EDA (dropping rows with key missing values)
+2026-06-19 14:36:59 | DEBUG | P06 | Columns required to be non-missing: ['avail_seat_km_per_week', 'incidents_85_99', 'fatal_accidents_85_99', 'fatalities_85_99', 'incidents_00_14', 'airline']
+2026-06-19 14:36:59 | INFO | P06 | Original rows: 56
+2026-06-19 14:36:59 | INFO | P06 | Clean rows:    56
+2026-06-19 14:36:59 | INFO | P06 | Rows dropped:  0
+2026-06-19 14:36:59 | INFO | P06 | --- Section 6: Descriptive statistics for numeric columns ---
+2026-06-19 14:36:59 | INFO | P06 | --------------- Manual statistics ---------------
+2026-06-19 14:36:59 | DEBUG | P06 | incidents_00_14 Statistics (using numpy):
+2026-06-19 14:36:59 | DEBUG | P06 |   Mean: 4.12
+2026-06-19 14:36:59 | DEBUG | P06 |   Std Dev: 4.50
+2026-06-19 14:36:59 | DEBUG | P06 |   Min: 0.00
+2026-06-19 14:36:59 | DEBUG | P06 |   Max: 24.00
+2026-06-19 14:36:59 | DEBUG | P06 |   Range: 24.00
+2026-06-19 14:36:59 | INFO | P06 | --------------- Using pandas describe() method ---------------
+2026-06-19 14:36:59 | INFO | P06 | Computing overall descriptive statistics
+2026-06-19 14:36:59 | DEBUG | P06 | 
+                        count          mean           std          min           25%          50%           75%  \
+avail_seat_km_per_week   56.0  1.384621e+09  1.465317e+09  259373346.0  4.740362e+08  802908893.0  1.847239e+09   
+incidents_85_99          56.0  7.178571e+00  1.103566e+01          0.0  2.000000e+00          4.0  8.000000e+00   
+fatal_accidents_85_99    56.0  2.178571e+00  2.861069e+00          0.0  0.000000e+00          1.0  3.000000e+00   
+fatalities_85_99         56.0  1.124107e+02  1.466911e+02          0.0  0.000000e+00         48.5  1.842500e+02   
+incidents_00_14          56.0  4.125000e+00  4.544977e+00          0.0  1.000000e+00          3.0  5.250000e+00   
+
+                                 max  
+avail_seat_km_per_week  7.139291e+09  
+incidents_85_99         7.600000e+01  
+fatal_accidents_85_99   1.400000e+01  
+fatalities_85_99        5.350000e+02  
+incidents_00_14         2.400000e+01  
+2026-06-19 14:36:59 | INFO | P06 | --------------- Using pandas groupby() and agg() ---------------
+2026-06-19 14:36:59 | INFO | P06 | Computing descriptive statistics by group
+2026-06-19 14:36:59 | DEBUG | P06 | 
+                           avail_seat_km_per_week                                           incidents_85_99            \
+                                            count          mean std         min         max           count  mean std   
+airline                                                                                                                 
+Aer Lingus                                      1  3.209067e+08 NaN   320906734   320906734               1   2.0 NaN   
+Aeroflot*                                       1  1.197672e+09 NaN  1197672318  1197672318               1  76.0 NaN   
+Aerolineas Argentinas                           1  3.858036e+08 NaN   385803648   385803648               1   6.0 NaN   
+Aeromexico*                                     1  5.968718e+08 NaN   596871813   596871813               1   3.0 NaN   
+Air Canada                                      1  1.865254e+09 NaN  1865253802  1865253802               1   2.0 NaN   
+Air France                                      1  3.004003e+09 NaN  3004002661  3004002661               1  14.0 NaN   
+Air India*                                      1  8.692536e+08 NaN   869253552   869253552               1   2.0 NaN   
+Air New Zealand*                                1  7.101748e+08 NaN   710174817   710174817               1   3.0 NaN   
+Alaska Airlines*                                1  9.653468e+08 NaN   965346773   965346773               1   5.0 NaN   
+Alitalia                                        1  6.980125e+08 NaN   698012498   698012498               1   7.0 NaN   
+All Nippon Airways                              1  1.841234e+09 NaN  1841234177  1841234177               1   3.0 NaN   
+American*                                       1  5.228357e+09 NaN  5228357340  5228357340               1  21.0 NaN   
+Austrian Airlines                               1  3.582398e+08 NaN   358239823   358239823               1   1.0 NaN   
+Avianca                                         1  3.969226e+08 NaN   396922563   396922563               1   5.0 NaN   
+British Airways*                                1  3.179761e+09 NaN  3179760952  3179760952               1   4.0 NaN   
+COPA                                            1  5.504915e+08 NaN   550491507   550491507               1   3.0 NaN   
+Cathay Pacific*                                 1  2.582459e+09 NaN  2582459303  2582459303               1   0.0 NaN   
+China Airlines                                  1  8.132165e+08 NaN   813216487   813216487               1  12.0 NaN   
+Condor                                          1  4.179826e+08 NaN   417982610   417982610               1   2.0 NaN   
+Delta / Northwest*                              1  6.525659e+09 NaN  6525658894  6525658894               1  24.0 NaN   
+Egyptair                                        1  5.576999e+08 NaN   557699891   557699891               1   8.0 NaN   
+El Al                                           1  3.354480e+08 NaN   335448023   335448023               1   1.0 NaN   
+Ethiopian Airlines                              1  4.885606e+08 NaN   488560643   488560643               1  25.0 NaN   
+Finnair                                         1  5.064650e+08 NaN   506464950   506464950               1   1.0 NaN   
+Garuda Indonesia                                1  6.133567e+08 NaN   613356665   613356665               1  10.0 NaN   
+Gulf Air                                        1  3.013798e+08 NaN   301379762   301379762               1   1.0 NaN   
+Hawaiian Airlines                               1  4.938778e+08 NaN   493877795   493877795               1   0.0 NaN   
+Iberia                                          1  1.173203e+09 NaN  1173203126  1173203126               1   4.0 NaN   
+Japan Airlines                                  1  1.574218e+09 NaN  1574217531  1574217531               1   3.0 NaN   
+KLM*                                            1  1.874562e+09 NaN  1874561773  1874561773               1   7.0 NaN   
+Kenya Airways                                   1  2.774148e+08 NaN   277414794   277414794               1   2.0 NaN   
+Korean Air                                      1  1.734523e+09 NaN  1734522605  1734522605               1  12.0 NaN   
+LAN Airlines                                    1  1.001966e+09 NaN  1001965891  1001965891               1   3.0 NaN   
+Lufthansa*                                      1  3.426530e+09 NaN  3426529504  3426529504               1   6.0 NaN   
+Malaysia Airlines                               1  1.039171e+09 NaN  1039171244  1039171244               1   3.0 NaN   
+Pakistan International                          1  3.485631e+08 NaN   348563137   348563137               1   8.0 NaN   
+Philippine Airlines                             1  4.130072e+08 NaN   413007158   413007158               1   7.0 NaN   
+Qantas*                                         1  1.917429e+09 NaN  1917428984  1917428984               1   1.0 NaN   
+Royal Air Maroc                                 1  2.957053e+08 NaN   295705339   295705339               1   5.0 NaN   
+SAS*                                            1  6.829719e+08 NaN   682971852   682971852               1   5.0 NaN   
+SWISS*                                          1  7.926013e+08 NaN   792601299   792601299               1   2.0 NaN   
+Saudi Arabian                                   1  8.596739e+08 NaN   859673901   859673901               1   7.0 NaN   
+Singapore Airlines                              1  2.376858e+09 NaN  2376857805  2376857805               1   2.0 NaN   
+South African                                   1  6.515024e+08 NaN   651502442   651502442               1   2.0 NaN   
+Southwest Airlines                              1  3.276526e+09 NaN  3276525770  3276525770               1   1.0 NaN   
+Sri Lankan / AirLanka                           1  3.255830e+08 NaN   325582976   325582976               1   2.0 NaN   
+TACA                                            1  2.593733e+08 NaN   259373346   259373346               1   3.0 NaN   
+TAM                                             1  1.509196e+09 NaN  1509195646  1509195646               1   8.0 NaN   
+TAP - Air Portugal                              1  6.191308e+08 NaN   619130754   619130754               1   0.0 NaN   
+Thai Airways                                    1  1.702802e+09 NaN  1702802250  1702802250               1   8.0 NaN   
+Turkish Airlines                                1  1.946098e+09 NaN  1946098294  1946098294               1   8.0 NaN   
+US Airways / America West*                      1  2.455688e+09 NaN  2455687887  2455687887               1  16.0 NaN   
+United / Continental*                           1  7.139291e+09 NaN  7139291291  7139291291               1  19.0 NaN   
+Vietnam Airlines                                1  6.250849e+08 NaN   625084918   625084918               1   7.0 NaN   
+Virgin Atlantic                                 1  1.005249e+09 NaN  1005248585  1005248585               1   1.0 NaN   
+Xiamen Airlines                                 1  4.304630e+08 NaN   430462962   430462962               1   9.0 NaN   
+
+                                   fatal_accidents_85_99                   fatalities_85_99                       \
+                           min max                 count  mean std min max            count   mean std  min  max   
+airline                                                                                                            
+Aer Lingus                   2   2                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Aeroflot*                   76  76                     1  14.0 NaN  14  14                1  128.0 NaN  128  128   
+Aerolineas Argentinas        6   6                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Aeromexico*                  3   3                     1   1.0 NaN   1   1                1   64.0 NaN   64   64   
+Air Canada                   2   2                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Air France                  14  14                     1   4.0 NaN   4   4                1   79.0 NaN   79   79   
+Air India*                   2   2                     1   1.0 NaN   1   1                1  329.0 NaN  329  329   
+Air New Zealand*             3   3                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Alaska Airlines*             5   5                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Alitalia                     7   7                     1   2.0 NaN   2   2                1   50.0 NaN   50   50   
+All Nippon Airways           3   3                     1   1.0 NaN   1   1                1    1.0 NaN    1    1   
+American*                   21  21                     1   5.0 NaN   5   5                1  101.0 NaN  101  101   
+Austrian Airlines            1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Avianca                      5   5                     1   3.0 NaN   3   3                1  323.0 NaN  323  323   
+British Airways*             4   4                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+COPA                         3   3                     1   1.0 NaN   1   1                1   47.0 NaN   47   47   
+Cathay Pacific*              0   0                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+China Airlines              12  12                     1   6.0 NaN   6   6                1  535.0 NaN  535  535   
+Condor                       2   2                     1   1.0 NaN   1   1                1   16.0 NaN   16   16   
+Delta / Northwest*          24  24                     1  12.0 NaN  12  12                1  407.0 NaN  407  407   
+Egyptair                     8   8                     1   3.0 NaN   3   3                1  282.0 NaN  282  282   
+El Al                        1   1                     1   1.0 NaN   1   1                1    4.0 NaN    4    4   
+Ethiopian Airlines          25  25                     1   5.0 NaN   5   5                1  167.0 NaN  167  167   
+Finnair                      1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Garuda Indonesia            10  10                     1   3.0 NaN   3   3                1  260.0 NaN  260  260   
+Gulf Air                     1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Hawaiian Airlines            0   0                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Iberia                       4   4                     1   1.0 NaN   1   1                1  148.0 NaN  148  148   
+Japan Airlines               3   3                     1   1.0 NaN   1   1                1  520.0 NaN  520  520   
+KLM*                         7   7                     1   1.0 NaN   1   1                1    3.0 NaN    3    3   
+Kenya Airways                2   2                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Korean Air                  12  12                     1   5.0 NaN   5   5                1  425.0 NaN  425  425   
+LAN Airlines                 3   3                     1   2.0 NaN   2   2                1   21.0 NaN   21   21   
+Lufthansa*                   6   6                     1   1.0 NaN   1   1                1    2.0 NaN    2    2   
+Malaysia Airlines            3   3                     1   1.0 NaN   1   1                1   34.0 NaN   34   34   
+Pakistan International       8   8                     1   3.0 NaN   3   3                1  234.0 NaN  234  234   
+Philippine Airlines          7   7                     1   4.0 NaN   4   4                1   74.0 NaN   74   74   
+Qantas*                      1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Royal Air Maroc              5   5                     1   3.0 NaN   3   3                1   51.0 NaN   51   51   
+SAS*                         5   5                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+SWISS*                       2   2                     1   1.0 NaN   1   1                1  229.0 NaN  229  229   
+Saudi Arabian                7   7                     1   2.0 NaN   2   2                1  313.0 NaN  313  313   
+Singapore Airlines           2   2                     1   2.0 NaN   2   2                1    6.0 NaN    6    6   
+South African                2   2                     1   1.0 NaN   1   1                1  159.0 NaN  159  159   
+Southwest Airlines           1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Sri Lankan / AirLanka        2   2                     1   1.0 NaN   1   1                1   14.0 NaN   14   14   
+TACA                         3   3                     1   1.0 NaN   1   1                1    3.0 NaN    3    3   
+TAM                          8   8                     1   3.0 NaN   3   3                1   98.0 NaN   98   98   
+TAP - Air Portugal           0   0                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Thai Airways                 8   8                     1   4.0 NaN   4   4                1  308.0 NaN  308  308   
+Turkish Airlines             8   8                     1   3.0 NaN   3   3                1   64.0 NaN   64   64   
+US Airways / America West*  16  16                     1   7.0 NaN   7   7                1  224.0 NaN  224  224   
+United / Continental*       19  19                     1   8.0 NaN   8   8                1  319.0 NaN  319  319   
+Vietnam Airlines             7   7                     1   3.0 NaN   3   3                1  171.0 NaN  171  171   
+Virgin Atlantic              1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Xiamen Airlines              9   9                     1   1.0 NaN   1   1                1   82.0 NaN   82   82   
+
+                           incidents_00_14                    
+                                     count  mean std min max  
+airline                                                       
+Aer Lingus                               1   0.0 NaN   0   0  
+Aeroflot*                                1   6.0 NaN   6   6  
+Aerolineas Argentinas                    1   1.0 NaN   1   1  
+Aeromexico*                              1   5.0 NaN   5   5  
+Air Canada                               1   2.0 NaN   2   2  
+Air France                               1   6.0 NaN   6   6  
+Air India*                               1   4.0 NaN   4   4  
+Air New Zealand*                         1   5.0 NaN   5   5  
+Alaska Airlines*                         1   5.0 NaN   5   5  
+Alitalia                                 1   4.0 NaN   4   4  
+All Nippon Airways                       1   7.0 NaN   7   7  
+American*                                1  17.0 NaN  17  17  
+Austrian Airlines                        1   1.0 NaN   1   1  
+Avianca                                  1   0.0 NaN   0   0  
+British Airways*                         1   6.0 NaN   6   6  
+COPA                                     1   0.0 NaN   0   0  
+Cathay Pacific*                          1   2.0 NaN   2   2  
+China Airlines                           1   2.0 NaN   2   2  
+Condor                                   1   0.0 NaN   0   0  
+Delta / Northwest*                       1  24.0 NaN  24  24  
+Egyptair                                 1   4.0 NaN   4   4  
+El Al                                    1   1.0 NaN   1   1  
+Ethiopian Airlines                       1   5.0 NaN   5   5  
+Finnair                                  1   0.0 NaN   0   0  
+Garuda Indonesia                         1   4.0 NaN   4   4  
+Gulf Air                                 1   3.0 NaN   3   3  
+Hawaiian Airlines                        1   1.0 NaN   1   1  
+Iberia                                   1   5.0 NaN   5   5  
+Japan Airlines                           1   0.0 NaN   0   0  
+KLM*                                     1   1.0 NaN   1   1  
+Kenya Airways                            1   2.0 NaN   2   2  
+Korean Air                               1   1.0 NaN   1   1  
+LAN Airlines                             1   0.0 NaN   0   0  
+Lufthansa*                               1   3.0 NaN   3   3  
+Malaysia Airlines                        1   3.0 NaN   3   3  
+Pakistan International                   1  10.0 NaN  10  10  
+Philippine Airlines                      1   2.0 NaN   2   2  
+Qantas*                                  1   5.0 NaN   5   5  
+Royal Air Maroc                          1   3.0 NaN   3   3  
+SAS*                                     1   6.0 NaN   6   6  
+SWISS*                                   1   3.0 NaN   3   3  
+Saudi Arabian                            1  11.0 NaN  11  11  
+Singapore Airlines                       1   2.0 NaN   2   2  
+South African                            1   1.0 NaN   1   1  
+Southwest Airlines                       1   8.0 NaN   8   8  
+Sri Lankan / AirLanka                    1   4.0 NaN   4   4  
+TACA                                     1   1.0 NaN   1   1  
+TAM                                      1   7.0 NaN   7   7  
+TAP - Air Portugal                       1   0.0 NaN   0   0  
+Thai Airways                             1   2.0 NaN   2   2  
+Turkish Airlines                         1   8.0 NaN   8   8  
+US Airways / America West*               1  11.0 NaN  11  11  
+United / Continental*                    1  14.0 NaN  14  14  
+Vietnam Airlines                         1   1.0 NaN   1   1  
+Virgin Atlantic                          1   0.0 NaN   0   0  
+Xiamen Airlines                          1   2.0 NaN   2   2  
+2026-06-19 14:36:59 | INFO | P06 | 
+Stacked view - easier to read in logs:
+2026-06-19 14:36:59 | DEBUG | P06 | 
+                                        count         mean  std        min        max
+airline                                                                              
+Aer Lingus      avail_seat_km_per_week      1  320906734.0  NaN  320906734  320906734
+                incidents_85_99             1          2.0  NaN          2          2
+                fatal_accidents_85_99       1          0.0  NaN          0          0
+                fatalities_85_99            1          0.0  NaN          0          0
+                incidents_00_14             1          0.0  NaN          0          0
+...                                       ...          ...  ...        ...        ...
+Xiamen Airlines avail_seat_km_per_week      1  430462962.0  NaN  430462962  430462962
+                incidents_85_99             1          9.0  NaN          9          9
+                fatal_accidents_85_99       1          1.0  NaN          1          1
+                fatalities_85_99            1         82.0  NaN         82         82
+                incidents_00_14             1          2.0  NaN          2          2
+
+[280 rows x 5 columns]
+2026-06-19 14:36:59 | INFO | P06 | --- Section 7: Correlation matrix for numeric columns ---
+2026-06-19 14:36:59 | INFO | P06 | Computing correlation matrix for numeric columns
+2026-06-19 14:36:59 | INFO | P06 | 
+Correlation matrix:
+2026-06-19 14:36:59 | DEBUG | P06 | 
+                        avail_seat_km_per_week  incidents_85_99  fatal_accidents_85_99  fatalities_85_99  \
+avail_seat_km_per_week                1.000000         0.279538               0.468300          0.209835   
+incidents_85_99                       0.279538         1.000000               0.856991          0.274394   
+fatal_accidents_85_99                 0.468300         0.856991               1.000000          0.540866   
+fatalities_85_99                      0.209835         0.274394               0.540866          1.000000   
+incidents_00_14                       0.725917         0.403009               0.572923          0.273696   
+
+                        incidents_00_14  
+avail_seat_km_per_week         0.725917  
+incidents_85_99                0.403009  
+fatal_accidents_85_99          0.572923  
+fatalities_85_99               0.273696  
+incidents_00_14                1.000000  
+2026-06-19 14:36:59 | INFO | P06 | ---------Visualize Correlation Matrix as a Heatmap---------------
+2026-06-19 14:37:00 | INFO | P06 | 
+CUSTOM: Update these notes and use Markdown cells to narrate and tell the story as you explore. For example:
+
+Interpretation:
+
+ - Values close to 1 (dark red) = strong positive correlation (both increase together)
+ - Values close to -1 (dark blue) = strong negative correlation (one increases, other decreases)
+ - Values close to 0 (white) = little or no linear relationship
+ - The diagonal is always 1 (each variable correlates perfectly with itself)
+
+From this heatmap, we can see that flipper_length_mm and body_mass_g show strong positive correlation (~0.87).
+
+2026-06-19 14:37:00 | INFO | P06 | --- Section 8: Charts ---
+2026-06-19 14:37:00 | INFO | P06 | ---- Creating Scatter Plot to see Relationships ------
+2026-06-19 14:37:00 | INFO | P06 | ----   Use clean dataframe ---------------------------
+2026-06-19 14:37:00 | INFO | P06 | ----   Set x to Incidents 1985-1999 -----------------------
+2026-06-19 14:37:00 | INFO | P06 | ----   Set y to Incidents 2000-2014 --------------------------
+2026-06-19 14:37:00 | INFO | P06 | ----   Set the hue (color mapping) to the group column --
+2026-06-19 14:37:00 | INFO | P06 | ------ Creating Box Plot to see Distribution: ---------
+2026-06-19 14:37:00 | INFO | P06 | ------   Use clean dataframe --------------------------
+2026-06-19 14:37:00 | INFO | P06 | ------   Set x to the group column --------------------
+2026-06-19 14:37:00 | INFO | P06 | ------   Set y to Fatalities 1985-1999 ----------------------
+2026-06-19 14:37:01 | INFO | P06 | --- Section 9: Summary and next steps ---
+2026-06-19 14:37:01 | INFO | P06 | ========================
+2026-06-19 14:37:01 | INFO | P06 | SUMMARY
+2026-06-19 14:37:01 | INFO | P06 | ========================
+2026-06-19 14:37:01 | INFO | P06 | Dataset: airline-safety
+2026-06-19 14:37:01 | INFO | P06 | Original rows: 56
+2026-06-19 14:37:01 | INFO | P06 | Clean rows:    56
+2026-06-19 14:37:01 | INFO | P06 | Groups found in airline: ['Aer Lingus', 'Aeroflot*', 'Aerolineas Argentinas', 'Aeromexico*', 'Air Canada', 'Air France', 'Air India*', 'Air New Zealand*', 'Alaska Airlines*', 'Alitalia', 'All Nippon Airways', 'American*', 'Austrian Airlines', 'Avianca', 'British Airways*', 'COPA', 'Cathay Pacific*', 'China Airlines', 'Condor', 'Delta / Northwest*', 'Egyptair', 'El Al', 'Ethiopian Airlines', 'Finnair', 'Garuda Indonesia', 'Gulf Air', 'Hawaiian Airlines', 'Iberia', 'Japan Airlines', 'KLM*', 'Kenya Airways', 'Korean Air', 'LAN Airlines', 'Lufthansa*', 'Malaysia Airlines', 'Pakistan International', 'Philippine Airlines', 'Qantas*', 'Royal Air Maroc', 'SAS*', 'SWISS*', 'Saudi Arabian', 'Singapore Airlines', 'South African', 'Southwest Airlines', 'Sri Lankan / AirLanka', 'TACA', 'TAM', 'TAP - Air Portugal', 'Thai Airways', 'Turkish Airlines', 'US Airways / America West*', 'United / Continental*', 'Vietnam Airlines', 'Virgin Atlantic', 'Xiamen Airlines']
+2026-06-19 14:37:01 | INFO | P06 | ======================
+2026-06-19 14:37:01 | INFO | P06 | Review the results. 
+2026-06-19 14:37:01 | INFO | P06 | Determine the strongest correlations. 
+2026-06-19 14:37:01 | INFO | P06 | ======================
+2026-06-19 14:37:01 | INFO | P06 | Look for interesting patterns in the charts. 
+2026-06-19 14:37:01 | INFO | P06 | Repeat the process, exploring additional angles.
+2026-06-19 14:37:01 | INFO | P06 | After finding interesting insights, conclude your analysis.
+2026-06-19 14:37:01 | INFO | P06 | ======================
+2026-06-19 14:37:01 | INFO | P06 | Include instructions and specifics in your README.md file.
+2026-06-19 14:37:01 | INFO | P06 | Write up your narrative on your docs/index.md file.
+2026-06-19 14:37:01 | INFO | P06 | Include your next step suggestions for further analysis or modeling.
+2026-06-19 14:37:01 | INFO | P06 | ======================
+2026-06-19 14:37:01 | INFO | P06 | Alecia custom modification: additional analysis checkpoint reached
+2026-06-19 14:37:01 | INFO | P06 | ----- in a script, call plt.show() once at the end to display all charts -----
+2026-06-19 14:37:01 | INFO | P06 | ----- in a script, close the chart windows (with the close button) to continue  -----
+2026-06-19 14:39:59 | INFO | P06 | EDA workflow complete
+2026-06-19 14:39:59 | INFO | P06 | IMPORTANT: This script creates chart windows.
+2026-06-19 14:39:59 | INFO | P06 | Close any chart windows and terminate this process with CTRL+c as needed.
+2026-06-19 14:39:59 | INFO | P06 | ========================
+2026-06-19 14:39:59 | INFO | P06 | Executed successfully!
+2026-06-19 14:39:59 | INFO | P06 | ========================
+2026-06-19 14:43:41 | INFO | P06 | === RUN START ===
+2026-06-19 14:43:41 | INFO | P06 | project=P06
+2026-06-19 14:43:41 | INFO | P06 | repo_dir=datafun-06-applied
+2026-06-19 14:43:41 | INFO | P06 | python=3.14.5
+2026-06-19 14:43:41 | INFO | P06 | os=Windows 11
+2026-06-19 14:43:41 | INFO | P06 | shell=powershell
+2026-06-19 14:43:41 | INFO | P06 | cwd=.
+2026-06-19 14:43:41 | INFO | P06 | github_actions=False
+2026-06-19 14:53:27 | INFO | P06 | === RUN START ===
+2026-06-19 14:53:27 | INFO | P06 | project=P06
+2026-06-19 14:53:27 | INFO | P06 | repo_dir=datafun-06-applied
+2026-06-19 14:53:27 | INFO | P06 | python=3.14.5
+2026-06-19 14:53:27 | INFO | P06 | os=Windows 11
+2026-06-19 14:53:27 | INFO | P06 | shell=powershell
+2026-06-19 14:53:27 | INFO | P06 | cwd=.
+2026-06-19 14:53:27 | INFO | P06 | github_actions=False
+2026-06-19 14:53:27 | INFO | P06 | === RUN START ===
+2026-06-19 14:53:27 | INFO | P06 | project=EDA
+2026-06-19 14:53:27 | INFO | P06 | repo_dir=datafun-06-applied
+2026-06-19 14:53:27 | INFO | P06 | python=3.14.5
+2026-06-19 14:53:27 | INFO | P06 | os=Windows 11
+2026-06-19 14:53:27 | INFO | P06 | shell=powershell
+2026-06-19 14:53:27 | INFO | P06 | cwd=.
+2026-06-19 14:53:27 | INFO | P06 | github_actions=False
+2026-06-19 14:53:27 | INFO | P06 | ========================
+2026-06-19 14:53:27 | INFO | P06 | START main()
+2026-06-19 14:53:27 | INFO | P06 | ========================
+2026-06-19 14:53:27 | INFO | P06 | --- Section 2: Load dataset: airline-safety ---
+2026-06-19 14:53:27 | INFO | P06 | Loading dataset: airline-safety
+2026-06-19 14:53:27 | INFO | P06 | Loaded: 56 rows, 8 columns
+2026-06-19 14:53:27 | INFO | P06 | --- Section 3: Inspect shape and basic structure ---
+2026-06-19 14:53:27 | INFO | P06 | Previewing first few rows of the dataset
+2026-06-19 14:53:27 | DEBUG | P06 | 
+                 airline  avail_seat_km_per_week  incidents_85_99  fatal_accidents_85_99  fatalities_85_99  \
+0             Aer Lingus               320906734                2                      0                 0   
+1              Aeroflot*              1197672318               76                     14               128   
+2  Aerolineas Argentinas               385803648                6                      0                 0   
+3            Aeromexico*               596871813                3                      1                64   
+4             Air Canada              1865253802                2                      0                 0   
+
+   incidents_00_14  fatal_accidents_00_14  fatalities_00_14  
+0                0                      0                 0  
+1                6                      1                88  
+2                1                      0                 0  
+3                5                      0                 0  
+4                2                      0                 0  
+2026-06-19 14:53:27 | INFO | P06 | Column names
+2026-06-19 14:53:27 | DEBUG | P06 | ['airline', 'avail_seat_km_per_week', 'incidents_85_99', 'fatal_accidents_85_99', 'fatalities_85_99', 'incidents_00_14', 'fatal_accidents_00_14', 'fatalities_00_14']
+2026-06-19 14:53:27 | INFO | P06 | DataFrame info (types and non-null counts)
+2026-06-19 14:53:27 | INFO | P06 | Dataset shape: 56 rows, 8 columns
+2026-06-19 14:53:27 | INFO | P06 | --- Section 4: Create Data Dictionary and Check Data Quality ---
+2026-06-19 14:53:27 | INFO | P06 | Building starter data dictionary
+2026-06-19 14:53:27 | DEBUG | P06 | 
+                   column  dtype  missing_count  missing_pct
+0                 airline    str              0          0.0
+1  avail_seat_km_per_week  int64              0          0.0
+2         incidents_85_99  int64              0          0.0
+3   fatal_accidents_85_99  int64              0          0.0
+4        fatalities_85_99  int64              0          0.0
+5         incidents_00_14  int64              0          0.0
+6   fatal_accidents_00_14  int64              0          0.0
+7        fatalities_00_14  int64              0          0.0
+2026-06-19 14:53:27 | INFO | P06 | Missing values per column:
+2026-06-19 14:53:27 | INFO | P06 | 
+airline                   0
+avail_seat_km_per_week    0
+incidents_85_99           0
+fatal_accidents_85_99     0
+fatalities_85_99          0
+incidents_00_14           0
+fatal_accidents_00_14     0
+fatalities_00_14          0
+dtype: int64
+2026-06-19 14:53:27 | INFO | P06 | Checking missing values per column
+2026-06-19 14:53:27 | DEBUG | P06 | 
+airline                   0
+avail_seat_km_per_week    0
+incidents_85_99           0
+fatal_accidents_85_99     0
+fatalities_85_99          0
+incidents_00_14           0
+fatal_accidents_00_14     0
+fatalities_00_14          0
+dtype: int64
+2026-06-19 14:53:27 | INFO | P06 | Duplicate rows detected: 0
+2026-06-19 14:53:27 | INFO | P06 | Call describe() for numeric columns
+2026-06-19 14:53:27 | DEBUG | P06 | 
+       avail_seat_km_per_week  incidents_85_99  fatal_accidents_85_99  fatalities_85_99  incidents_00_14
+count            5.600000e+01        56.000000              56.000000         56.000000        56.000000
+mean             1.384621e+09         7.178571               2.178571        112.410714         4.125000
+std              1.465317e+09        11.035656               2.861069        146.691114         4.544977
+min              2.593733e+08         0.000000               0.000000          0.000000         0.000000
+25%              4.740362e+08         2.000000               0.000000          0.000000         1.000000
+50%              8.029089e+08         4.000000               1.000000         48.500000         3.000000
+75%              1.847239e+09         8.000000               3.000000        184.250000         5.250000
+max              7.139291e+09        76.000000              14.000000        535.000000        24.000000
+
+2026-06-19 14:53:27 | INFO | P06 | --- Section 5: Create a cleaned view for EDA ---
+2026-06-19 14:53:27 | INFO | P06 | Creating cleaned view for EDA (dropping rows with key missing values)
+2026-06-19 14:53:27 | DEBUG | P06 | Columns required to be non-missing: ['avail_seat_km_per_week', 'incidents_85_99', 'fatal_accidents_85_99', 'fatalities_85_99', 'incidents_00_14', 'airline']
+2026-06-19 14:53:27 | INFO | P06 | Original rows: 56
+2026-06-19 14:53:27 | INFO | P06 | Clean rows:    56
+2026-06-19 14:53:27 | INFO | P06 | Rows dropped:  0
+2026-06-19 14:53:27 | INFO | P06 | --- Section 6: Descriptive statistics for numeric columns ---
+2026-06-19 14:53:27 | INFO | P06 | --------------- Manual statistics ---------------
+2026-06-19 14:53:27 | DEBUG | P06 | incidents_00_14 Statistics (using numpy):
+2026-06-19 14:53:27 | DEBUG | P06 |   Mean: 4.12
+2026-06-19 14:53:27 | DEBUG | P06 |   Std Dev: 4.50
+2026-06-19 14:53:27 | DEBUG | P06 |   Min: 0.00
+2026-06-19 14:53:27 | DEBUG | P06 |   Max: 24.00
+2026-06-19 14:53:27 | DEBUG | P06 |   Range: 24.00
+2026-06-19 14:53:27 | INFO | P06 | --------------- Using pandas describe() method ---------------
+2026-06-19 14:53:27 | INFO | P06 | Computing overall descriptive statistics
+2026-06-19 14:53:27 | DEBUG | P06 | 
+                        count          mean           std          min           25%          50%           75%  \
+avail_seat_km_per_week   56.0  1.384621e+09  1.465317e+09  259373346.0  4.740362e+08  802908893.0  1.847239e+09   
+incidents_85_99          56.0  7.178571e+00  1.103566e+01          0.0  2.000000e+00          4.0  8.000000e+00   
+fatal_accidents_85_99    56.0  2.178571e+00  2.861069e+00          0.0  0.000000e+00          1.0  3.000000e+00   
+fatalities_85_99         56.0  1.124107e+02  1.466911e+02          0.0  0.000000e+00         48.5  1.842500e+02   
+incidents_00_14          56.0  4.125000e+00  4.544977e+00          0.0  1.000000e+00          3.0  5.250000e+00   
+
+                                 max  
+avail_seat_km_per_week  7.139291e+09  
+incidents_85_99         7.600000e+01  
+fatal_accidents_85_99   1.400000e+01  
+fatalities_85_99        5.350000e+02  
+incidents_00_14         2.400000e+01  
+2026-06-19 14:53:27 | INFO | P06 | --------------- Using pandas groupby() and agg() ---------------
+2026-06-19 14:53:27 | INFO | P06 | Computing descriptive statistics by group
+2026-06-19 14:53:27 | DEBUG | P06 | 
+                           avail_seat_km_per_week                                           incidents_85_99            \
+                                            count          mean std         min         max           count  mean std   
+airline                                                                                                                 
+Aer Lingus                                      1  3.209067e+08 NaN   320906734   320906734               1   2.0 NaN   
+Aeroflot*                                       1  1.197672e+09 NaN  1197672318  1197672318               1  76.0 NaN   
+Aerolineas Argentinas                           1  3.858036e+08 NaN   385803648   385803648               1   6.0 NaN   
+Aeromexico*                                     1  5.968718e+08 NaN   596871813   596871813               1   3.0 NaN   
+Air Canada                                      1  1.865254e+09 NaN  1865253802  1865253802               1   2.0 NaN   
+Air France                                      1  3.004003e+09 NaN  3004002661  3004002661               1  14.0 NaN   
+Air India*                                      1  8.692536e+08 NaN   869253552   869253552               1   2.0 NaN   
+Air New Zealand*                                1  7.101748e+08 NaN   710174817   710174817               1   3.0 NaN   
+Alaska Airlines*                                1  9.653468e+08 NaN   965346773   965346773               1   5.0 NaN   
+Alitalia                                        1  6.980125e+08 NaN   698012498   698012498               1   7.0 NaN   
+All Nippon Airways                              1  1.841234e+09 NaN  1841234177  1841234177               1   3.0 NaN   
+American*                                       1  5.228357e+09 NaN  5228357340  5228357340               1  21.0 NaN   
+Austrian Airlines                               1  3.582398e+08 NaN   358239823   358239823               1   1.0 NaN   
+Avianca                                         1  3.969226e+08 NaN   396922563   396922563               1   5.0 NaN   
+British Airways*                                1  3.179761e+09 NaN  3179760952  3179760952               1   4.0 NaN   
+COPA                                            1  5.504915e+08 NaN   550491507   550491507               1   3.0 NaN   
+Cathay Pacific*                                 1  2.582459e+09 NaN  2582459303  2582459303               1   0.0 NaN   
+China Airlines                                  1  8.132165e+08 NaN   813216487   813216487               1  12.0 NaN   
+Condor                                          1  4.179826e+08 NaN   417982610   417982610               1   2.0 NaN   
+Delta / Northwest*                              1  6.525659e+09 NaN  6525658894  6525658894               1  24.0 NaN   
+Egyptair                                        1  5.576999e+08 NaN   557699891   557699891               1   8.0 NaN   
+El Al                                           1  3.354480e+08 NaN   335448023   335448023               1   1.0 NaN   
+Ethiopian Airlines                              1  4.885606e+08 NaN   488560643   488560643               1  25.0 NaN   
+Finnair                                         1  5.064650e+08 NaN   506464950   506464950               1   1.0 NaN   
+Garuda Indonesia                                1  6.133567e+08 NaN   613356665   613356665               1  10.0 NaN   
+Gulf Air                                        1  3.013798e+08 NaN   301379762   301379762               1   1.0 NaN   
+Hawaiian Airlines                               1  4.938778e+08 NaN   493877795   493877795               1   0.0 NaN   
+Iberia                                          1  1.173203e+09 NaN  1173203126  1173203126               1   4.0 NaN   
+Japan Airlines                                  1  1.574218e+09 NaN  1574217531  1574217531               1   3.0 NaN   
+KLM*                                            1  1.874562e+09 NaN  1874561773  1874561773               1   7.0 NaN   
+Kenya Airways                                   1  2.774148e+08 NaN   277414794   277414794               1   2.0 NaN   
+Korean Air                                      1  1.734523e+09 NaN  1734522605  1734522605               1  12.0 NaN   
+LAN Airlines                                    1  1.001966e+09 NaN  1001965891  1001965891               1   3.0 NaN   
+Lufthansa*                                      1  3.426530e+09 NaN  3426529504  3426529504               1   6.0 NaN   
+Malaysia Airlines                               1  1.039171e+09 NaN  1039171244  1039171244               1   3.0 NaN   
+Pakistan International                          1  3.485631e+08 NaN   348563137   348563137               1   8.0 NaN   
+Philippine Airlines                             1  4.130072e+08 NaN   413007158   413007158               1   7.0 NaN   
+Qantas*                                         1  1.917429e+09 NaN  1917428984  1917428984               1   1.0 NaN   
+Royal Air Maroc                                 1  2.957053e+08 NaN   295705339   295705339               1   5.0 NaN   
+SAS*                                            1  6.829719e+08 NaN   682971852   682971852               1   5.0 NaN   
+SWISS*                                          1  7.926013e+08 NaN   792601299   792601299               1   2.0 NaN   
+Saudi Arabian                                   1  8.596739e+08 NaN   859673901   859673901               1   7.0 NaN   
+Singapore Airlines                              1  2.376858e+09 NaN  2376857805  2376857805               1   2.0 NaN   
+South African                                   1  6.515024e+08 NaN   651502442   651502442               1   2.0 NaN   
+Southwest Airlines                              1  3.276526e+09 NaN  3276525770  3276525770               1   1.0 NaN   
+Sri Lankan / AirLanka                           1  3.255830e+08 NaN   325582976   325582976               1   2.0 NaN   
+TACA                                            1  2.593733e+08 NaN   259373346   259373346               1   3.0 NaN   
+TAM                                             1  1.509196e+09 NaN  1509195646  1509195646               1   8.0 NaN   
+TAP - Air Portugal                              1  6.191308e+08 NaN   619130754   619130754               1   0.0 NaN   
+Thai Airways                                    1  1.702802e+09 NaN  1702802250  1702802250               1   8.0 NaN   
+Turkish Airlines                                1  1.946098e+09 NaN  1946098294  1946098294               1   8.0 NaN   
+US Airways / America West*                      1  2.455688e+09 NaN  2455687887  2455687887               1  16.0 NaN   
+United / Continental*                           1  7.139291e+09 NaN  7139291291  7139291291               1  19.0 NaN   
+Vietnam Airlines                                1  6.250849e+08 NaN   625084918   625084918               1   7.0 NaN   
+Virgin Atlantic                                 1  1.005249e+09 NaN  1005248585  1005248585               1   1.0 NaN   
+Xiamen Airlines                                 1  4.304630e+08 NaN   430462962   430462962               1   9.0 NaN   
+
+                                   fatal_accidents_85_99                   fatalities_85_99                       \
+                           min max                 count  mean std min max            count   mean std  min  max   
+airline                                                                                                            
+Aer Lingus                   2   2                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Aeroflot*                   76  76                     1  14.0 NaN  14  14                1  128.0 NaN  128  128   
+Aerolineas Argentinas        6   6                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Aeromexico*                  3   3                     1   1.0 NaN   1   1                1   64.0 NaN   64   64   
+Air Canada                   2   2                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Air France                  14  14                     1   4.0 NaN   4   4                1   79.0 NaN   79   79   
+Air India*                   2   2                     1   1.0 NaN   1   1                1  329.0 NaN  329  329   
+Air New Zealand*             3   3                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Alaska Airlines*             5   5                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Alitalia                     7   7                     1   2.0 NaN   2   2                1   50.0 NaN   50   50   
+All Nippon Airways           3   3                     1   1.0 NaN   1   1                1    1.0 NaN    1    1   
+American*                   21  21                     1   5.0 NaN   5   5                1  101.0 NaN  101  101   
+Austrian Airlines            1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Avianca                      5   5                     1   3.0 NaN   3   3                1  323.0 NaN  323  323   
+British Airways*             4   4                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+COPA                         3   3                     1   1.0 NaN   1   1                1   47.0 NaN   47   47   
+Cathay Pacific*              0   0                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+China Airlines              12  12                     1   6.0 NaN   6   6                1  535.0 NaN  535  535   
+Condor                       2   2                     1   1.0 NaN   1   1                1   16.0 NaN   16   16   
+Delta / Northwest*          24  24                     1  12.0 NaN  12  12                1  407.0 NaN  407  407   
+Egyptair                     8   8                     1   3.0 NaN   3   3                1  282.0 NaN  282  282   
+El Al                        1   1                     1   1.0 NaN   1   1                1    4.0 NaN    4    4   
+Ethiopian Airlines          25  25                     1   5.0 NaN   5   5                1  167.0 NaN  167  167   
+Finnair                      1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Garuda Indonesia            10  10                     1   3.0 NaN   3   3                1  260.0 NaN  260  260   
+Gulf Air                     1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Hawaiian Airlines            0   0                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Iberia                       4   4                     1   1.0 NaN   1   1                1  148.0 NaN  148  148   
+Japan Airlines               3   3                     1   1.0 NaN   1   1                1  520.0 NaN  520  520   
+KLM*                         7   7                     1   1.0 NaN   1   1                1    3.0 NaN    3    3   
+Kenya Airways                2   2                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Korean Air                  12  12                     1   5.0 NaN   5   5                1  425.0 NaN  425  425   
+LAN Airlines                 3   3                     1   2.0 NaN   2   2                1   21.0 NaN   21   21   
+Lufthansa*                   6   6                     1   1.0 NaN   1   1                1    2.0 NaN    2    2   
+Malaysia Airlines            3   3                     1   1.0 NaN   1   1                1   34.0 NaN   34   34   
+Pakistan International       8   8                     1   3.0 NaN   3   3                1  234.0 NaN  234  234   
+Philippine Airlines          7   7                     1   4.0 NaN   4   4                1   74.0 NaN   74   74   
+Qantas*                      1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Royal Air Maroc              5   5                     1   3.0 NaN   3   3                1   51.0 NaN   51   51   
+SAS*                         5   5                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+SWISS*                       2   2                     1   1.0 NaN   1   1                1  229.0 NaN  229  229   
+Saudi Arabian                7   7                     1   2.0 NaN   2   2                1  313.0 NaN  313  313   
+Singapore Airlines           2   2                     1   2.0 NaN   2   2                1    6.0 NaN    6    6   
+South African                2   2                     1   1.0 NaN   1   1                1  159.0 NaN  159  159   
+Southwest Airlines           1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Sri Lankan / AirLanka        2   2                     1   1.0 NaN   1   1                1   14.0 NaN   14   14   
+TACA                         3   3                     1   1.0 NaN   1   1                1    3.0 NaN    3    3   
+TAM                          8   8                     1   3.0 NaN   3   3                1   98.0 NaN   98   98   
+TAP - Air Portugal           0   0                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Thai Airways                 8   8                     1   4.0 NaN   4   4                1  308.0 NaN  308  308   
+Turkish Airlines             8   8                     1   3.0 NaN   3   3                1   64.0 NaN   64   64   
+US Airways / America West*  16  16                     1   7.0 NaN   7   7                1  224.0 NaN  224  224   
+United / Continental*       19  19                     1   8.0 NaN   8   8                1  319.0 NaN  319  319   
+Vietnam Airlines             7   7                     1   3.0 NaN   3   3                1  171.0 NaN  171  171   
+Virgin Atlantic              1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Xiamen Airlines              9   9                     1   1.0 NaN   1   1                1   82.0 NaN   82   82   
+
+                           incidents_00_14                    
+                                     count  mean std min max  
+airline                                                       
+Aer Lingus                               1   0.0 NaN   0   0  
+Aeroflot*                                1   6.0 NaN   6   6  
+Aerolineas Argentinas                    1   1.0 NaN   1   1  
+Aeromexico*                              1   5.0 NaN   5   5  
+Air Canada                               1   2.0 NaN   2   2  
+Air France                               1   6.0 NaN   6   6  
+Air India*                               1   4.0 NaN   4   4  
+Air New Zealand*                         1   5.0 NaN   5   5  
+Alaska Airlines*                         1   5.0 NaN   5   5  
+Alitalia                                 1   4.0 NaN   4   4  
+All Nippon Airways                       1   7.0 NaN   7   7  
+American*                                1  17.0 NaN  17  17  
+Austrian Airlines                        1   1.0 NaN   1   1  
+Avianca                                  1   0.0 NaN   0   0  
+British Airways*                         1   6.0 NaN   6   6  
+COPA                                     1   0.0 NaN   0   0  
+Cathay Pacific*                          1   2.0 NaN   2   2  
+China Airlines                           1   2.0 NaN   2   2  
+Condor                                   1   0.0 NaN   0   0  
+Delta / Northwest*                       1  24.0 NaN  24  24  
+Egyptair                                 1   4.0 NaN   4   4  
+El Al                                    1   1.0 NaN   1   1  
+Ethiopian Airlines                       1   5.0 NaN   5   5  
+Finnair                                  1   0.0 NaN   0   0  
+Garuda Indonesia                         1   4.0 NaN   4   4  
+Gulf Air                                 1   3.0 NaN   3   3  
+Hawaiian Airlines                        1   1.0 NaN   1   1  
+Iberia                                   1   5.0 NaN   5   5  
+Japan Airlines                           1   0.0 NaN   0   0  
+KLM*                                     1   1.0 NaN   1   1  
+Kenya Airways                            1   2.0 NaN   2   2  
+Korean Air                               1   1.0 NaN   1   1  
+LAN Airlines                             1   0.0 NaN   0   0  
+Lufthansa*                               1   3.0 NaN   3   3  
+Malaysia Airlines                        1   3.0 NaN   3   3  
+Pakistan International                   1  10.0 NaN  10  10  
+Philippine Airlines                      1   2.0 NaN   2   2  
+Qantas*                                  1   5.0 NaN   5   5  
+Royal Air Maroc                          1   3.0 NaN   3   3  
+SAS*                                     1   6.0 NaN   6   6  
+SWISS*                                   1   3.0 NaN   3   3  
+Saudi Arabian                            1  11.0 NaN  11  11  
+Singapore Airlines                       1   2.0 NaN   2   2  
+South African                            1   1.0 NaN   1   1  
+Southwest Airlines                       1   8.0 NaN   8   8  
+Sri Lankan / AirLanka                    1   4.0 NaN   4   4  
+TACA                                     1   1.0 NaN   1   1  
+TAM                                      1   7.0 NaN   7   7  
+TAP - Air Portugal                       1   0.0 NaN   0   0  
+Thai Airways                             1   2.0 NaN   2   2  
+Turkish Airlines                         1   8.0 NaN   8   8  
+US Airways / America West*               1  11.0 NaN  11  11  
+United / Continental*                    1  14.0 NaN  14  14  
+Vietnam Airlines                         1   1.0 NaN   1   1  
+Virgin Atlantic                          1   0.0 NaN   0   0  
+Xiamen Airlines                          1   2.0 NaN   2   2  
+2026-06-19 14:53:27 | INFO | P06 | 
+Stacked view - easier to read in logs:
+2026-06-19 14:53:27 | DEBUG | P06 | 
+                                        count         mean  std        min        max
+airline                                                                              
+Aer Lingus      avail_seat_km_per_week      1  320906734.0  NaN  320906734  320906734
+                incidents_85_99             1          2.0  NaN          2          2
+                fatal_accidents_85_99       1          0.0  NaN          0          0
+                fatalities_85_99            1          0.0  NaN          0          0
+                incidents_00_14             1          0.0  NaN          0          0
+...                                       ...          ...  ...        ...        ...
+Xiamen Airlines avail_seat_km_per_week      1  430462962.0  NaN  430462962  430462962
+                incidents_85_99             1          9.0  NaN          9          9
+                fatal_accidents_85_99       1          1.0  NaN          1          1
+                fatalities_85_99            1         82.0  NaN         82         82
+                incidents_00_14             1          2.0  NaN          2          2
+
+[280 rows x 5 columns]
+2026-06-19 14:53:27 | INFO | P06 | --- Section 7: Correlation matrix for numeric columns ---
+2026-06-19 14:53:27 | INFO | P06 | Computing correlation matrix for numeric columns
+2026-06-19 14:53:27 | INFO | P06 | 
+Correlation matrix:
+2026-06-19 14:53:27 | DEBUG | P06 | 
+                        avail_seat_km_per_week  incidents_85_99  fatal_accidents_85_99  fatalities_85_99  \
+avail_seat_km_per_week                1.000000         0.279538               0.468300          0.209835   
+incidents_85_99                       0.279538         1.000000               0.856991          0.274394   
+fatal_accidents_85_99                 0.468300         0.856991               1.000000          0.540866   
+fatalities_85_99                      0.209835         0.274394               0.540866          1.000000   
+incidents_00_14                       0.725917         0.403009               0.572923          0.273696   
+
+                        incidents_00_14  
+avail_seat_km_per_week         0.725917  
+incidents_85_99                0.403009  
+fatal_accidents_85_99          0.572923  
+fatalities_85_99               0.273696  
+incidents_00_14                1.000000  
+2026-06-19 14:53:27 | INFO | P06 | ---------Visualize Correlation Matrix as a Heatmap---------------
+2026-06-19 14:53:28 | INFO | P06 | 
+CUSTOM: Update these notes and use Markdown cells to narrate and tell the story as you explore. For example:
+
+Interpretation:
+
+ - Values close to 1 (dark red) = strong positive correlation (both increase together)
+ - Values close to -1 (dark blue) = strong negative correlation (one increases, other decreases)
+ - Values close to 0 (white) = little or no linear relationship
+ - The diagonal is always 1 (each variable correlates perfectly with itself)
+
+From this heatmap, we can see that flipper_length_mm and body_mass_g show strong positive correlation (~0.87).
+
+2026-06-19 14:53:28 | INFO | P06 | --- Section 8: Charts ---
+2026-06-19 14:53:28 | INFO | P06 | ---- Creating Scatter Plot to see Relationships ------
+2026-06-19 14:53:28 | INFO | P06 | ----   Use clean dataframe ---------------------------
+2026-06-19 14:53:28 | INFO | P06 | ----   Set x to Incidents 1985-1999 -----------------------
+2026-06-19 14:53:28 | INFO | P06 | ----   Set y to Incidents 2000-2014 --------------------------
+2026-06-19 14:53:28 | INFO | P06 | ----   Set the hue (color mapping) to the group column --
+2026-06-19 14:53:28 | INFO | P06 | ------ Creating Box Plot to see Distribution: ---------
+2026-06-19 14:53:28 | INFO | P06 | ------   Use clean dataframe --------------------------
+2026-06-19 14:53:28 | INFO | P06 | ------   Set x to the group column --------------------
+2026-06-19 14:53:28 | INFO | P06 | ------   Set y to Fatalities 1985-1999 ----------------------
+2026-06-19 14:53:29 | INFO | P06 | --- Section 9: Summary and next steps ---
+2026-06-19 14:53:29 | INFO | P06 | ========================
+2026-06-19 14:53:29 | INFO | P06 | SUMMARY
+2026-06-19 14:53:29 | INFO | P06 | ========================
+2026-06-19 14:53:29 | INFO | P06 | Dataset: airline-safety
+2026-06-19 14:53:29 | INFO | P06 | Original rows: 56
+2026-06-19 14:53:29 | INFO | P06 | Clean rows:    56
+2026-06-19 14:53:29 | INFO | P06 | Groups found in airline: ['Aer Lingus', 'Aeroflot*', 'Aerolineas Argentinas', 'Aeromexico*', 'Air Canada', 'Air France', 'Air India*', 'Air New Zealand*', 'Alaska Airlines*', 'Alitalia', 'All Nippon Airways', 'American*', 'Austrian Airlines', 'Avianca', 'British Airways*', 'COPA', 'Cathay Pacific*', 'China Airlines', 'Condor', 'Delta / Northwest*', 'Egyptair', 'El Al', 'Ethiopian Airlines', 'Finnair', 'Garuda Indonesia', 'Gulf Air', 'Hawaiian Airlines', 'Iberia', 'Japan Airlines', 'KLM*', 'Kenya Airways', 'Korean Air', 'LAN Airlines', 'Lufthansa*', 'Malaysia Airlines', 'Pakistan International', 'Philippine Airlines', 'Qantas*', 'Royal Air Maroc', 'SAS*', 'SWISS*', 'Saudi Arabian', 'Singapore Airlines', 'South African', 'Southwest Airlines', 'Sri Lankan / AirLanka', 'TACA', 'TAM', 'TAP - Air Portugal', 'Thai Airways', 'Turkish Airlines', 'US Airways / America West*', 'United / Continental*', 'Vietnam Airlines', 'Virgin Atlantic', 'Xiamen Airlines']
+2026-06-19 14:53:29 | INFO | P06 | ======================
+2026-06-19 14:53:29 | INFO | P06 | Review the results. 
+2026-06-19 14:53:29 | INFO | P06 | Determine the strongest correlations. 
+2026-06-19 14:53:29 | INFO | P06 | ======================
+2026-06-19 14:53:29 | INFO | P06 | Look for interesting patterns in the charts. 
+2026-06-19 14:53:29 | INFO | P06 | Repeat the process, exploring additional angles.
+2026-06-19 14:53:29 | INFO | P06 | After finding interesting insights, conclude your analysis.
+2026-06-19 14:53:29 | INFO | P06 | ======================
+2026-06-19 14:53:29 | INFO | P06 | Include instructions and specifics in your README.md file.
+2026-06-19 14:53:29 | INFO | P06 | Write up your narrative on your docs/index.md file.
+2026-06-19 14:53:29 | INFO | P06 | Include your next step suggestions for further analysis or modeling.
+2026-06-19 14:53:29 | INFO | P06 | ======================
+2026-06-19 14:53:29 | INFO | P06 | Alecia custom modification: additional analysis checkpoint reached
+2026-06-19 14:53:29 | INFO | P06 | ----- in a script, call plt.show() once at the end to display all charts -----
+2026-06-19 14:53:29 | INFO | P06 | ----- in a script, close the chart windows (with the close button) to continue  -----
+2026-06-19 15:01:59 | INFO | P06 | EDA workflow complete
+2026-06-19 15:01:59 | INFO | P06 | IMPORTANT: This script creates chart windows.
+2026-06-19 15:01:59 | INFO | P06 | Close any chart windows and terminate this process with CTRL+c as needed.
+2026-06-19 15:01:59 | INFO | P06 | ========================
+2026-06-19 15:01:59 | INFO | P06 | Executed successfully!
+2026-06-19 15:01:59 | INFO | P06 | ========================
+2026-06-19 15:02:06 | INFO | P06 | === RUN START ===
+2026-06-19 15:02:06 | INFO | P06 | project=P06
+2026-06-19 15:02:06 | INFO | P06 | repo_dir=datafun-06-applied
+2026-06-19 15:02:06 | INFO | P06 | python=3.14.5
+2026-06-19 15:02:06 | INFO | P06 | os=Windows 11
+2026-06-19 15:02:06 | INFO | P06 | shell=powershell
+2026-06-19 15:02:06 | INFO | P06 | cwd=.
+2026-06-19 15:02:06 | INFO | P06 | github_actions=False
+2026-06-19 15:02:07 | INFO | P06 | === RUN START ===
+2026-06-19 15:02:07 | INFO | P06 | project=EDA
+2026-06-19 15:02:07 | INFO | P06 | repo_dir=datafun-06-applied
+2026-06-19 15:02:07 | INFO | P06 | python=3.14.5
+2026-06-19 15:02:07 | INFO | P06 | os=Windows 11
+2026-06-19 15:02:07 | INFO | P06 | shell=powershell
+2026-06-19 15:02:07 | INFO | P06 | cwd=.
+2026-06-19 15:02:07 | INFO | P06 | github_actions=False
+2026-06-19 15:02:07 | INFO | P06 | ========================
+2026-06-19 15:02:07 | INFO | P06 | START main()
+2026-06-19 15:02:07 | INFO | P06 | ========================
+2026-06-19 15:02:07 | INFO | P06 | --- Section 2: Load dataset: airline-safety ---
+2026-06-19 15:02:07 | INFO | P06 | Loading dataset: airline-safety
+2026-06-19 15:02:07 | INFO | P06 | Loaded: 56 rows, 8 columns
+2026-06-19 15:02:07 | INFO | P06 | --- Section 3: Inspect shape and basic structure ---
+2026-06-19 15:02:07 | INFO | P06 | Previewing first few rows of the dataset
+2026-06-19 15:02:07 | DEBUG | P06 | 
+                 airline  avail_seat_km_per_week  incidents_85_99  fatal_accidents_85_99  fatalities_85_99  \
+0             Aer Lingus               320906734                2                      0                 0   
+1              Aeroflot*              1197672318               76                     14               128   
+2  Aerolineas Argentinas               385803648                6                      0                 0   
+3            Aeromexico*               596871813                3                      1                64   
+4             Air Canada              1865253802                2                      0                 0   
+
+   incidents_00_14  fatal_accidents_00_14  fatalities_00_14  
+0                0                      0                 0  
+1                6                      1                88  
+2                1                      0                 0  
+3                5                      0                 0  
+4                2                      0                 0  
+2026-06-19 15:02:07 | INFO | P06 | Column names
+2026-06-19 15:02:07 | DEBUG | P06 | ['airline', 'avail_seat_km_per_week', 'incidents_85_99', 'fatal_accidents_85_99', 'fatalities_85_99', 'incidents_00_14', 'fatal_accidents_00_14', 'fatalities_00_14']
+2026-06-19 15:02:07 | INFO | P06 | DataFrame info (types and non-null counts)
+2026-06-19 15:02:07 | INFO | P06 | Dataset shape: 56 rows, 8 columns
+2026-06-19 15:02:07 | INFO | P06 | --- Section 4: Create Data Dictionary and Check Data Quality ---
+2026-06-19 15:02:07 | INFO | P06 | Building starter data dictionary
+2026-06-19 15:02:07 | DEBUG | P06 | 
+                   column  dtype  missing_count  missing_pct
+0                 airline    str              0          0.0
+1  avail_seat_km_per_week  int64              0          0.0
+2         incidents_85_99  int64              0          0.0
+3   fatal_accidents_85_99  int64              0          0.0
+4        fatalities_85_99  int64              0          0.0
+5         incidents_00_14  int64              0          0.0
+6   fatal_accidents_00_14  int64              0          0.0
+7        fatalities_00_14  int64              0          0.0
+2026-06-19 15:02:07 | INFO | P06 | Missing values per column:
+2026-06-19 15:02:07 | INFO | P06 | 
+airline                   0
+avail_seat_km_per_week    0
+incidents_85_99           0
+fatal_accidents_85_99     0
+fatalities_85_99          0
+incidents_00_14           0
+fatal_accidents_00_14     0
+fatalities_00_14          0
+dtype: int64
+2026-06-19 15:02:07 | INFO | P06 | Checking missing values per column
+2026-06-19 15:02:07 | DEBUG | P06 | 
+airline                   0
+avail_seat_km_per_week    0
+incidents_85_99           0
+fatal_accidents_85_99     0
+fatalities_85_99          0
+incidents_00_14           0
+fatal_accidents_00_14     0
+fatalities_00_14          0
+dtype: int64
+2026-06-19 15:02:07 | INFO | P06 | Duplicate rows detected: 0
+2026-06-19 15:02:07 | INFO | P06 | Call describe() for numeric columns
+2026-06-19 15:02:07 | DEBUG | P06 | 
+       avail_seat_km_per_week  incidents_85_99  fatal_accidents_85_99  fatalities_85_99  incidents_00_14
+count            5.600000e+01        56.000000              56.000000         56.000000        56.000000
+mean             1.384621e+09         7.178571               2.178571        112.410714         4.125000
+std              1.465317e+09        11.035656               2.861069        146.691114         4.544977
+min              2.593733e+08         0.000000               0.000000          0.000000         0.000000
+25%              4.740362e+08         2.000000               0.000000          0.000000         1.000000
+50%              8.029089e+08         4.000000               1.000000         48.500000         3.000000
+75%              1.847239e+09         8.000000               3.000000        184.250000         5.250000
+max              7.139291e+09        76.000000              14.000000        535.000000        24.000000
+
+2026-06-19 15:02:07 | INFO | P06 | --- Section 5: Create a cleaned view for EDA ---
+2026-06-19 15:02:07 | INFO | P06 | Creating cleaned view for EDA (dropping rows with key missing values)
+2026-06-19 15:02:07 | DEBUG | P06 | Columns required to be non-missing: ['avail_seat_km_per_week', 'incidents_85_99', 'fatal_accidents_85_99', 'fatalities_85_99', 'incidents_00_14', 'airline']
+2026-06-19 15:02:07 | INFO | P06 | Original rows: 56
+2026-06-19 15:02:07 | INFO | P06 | Clean rows:    56
+2026-06-19 15:02:07 | INFO | P06 | Rows dropped:  0
+2026-06-19 15:02:07 | INFO | P06 | --- Section 6: Descriptive statistics for numeric columns ---
+2026-06-19 15:02:07 | INFO | P06 | --------------- Manual statistics ---------------
+2026-06-19 15:02:07 | DEBUG | P06 | incidents_00_14 Statistics (using numpy):
+2026-06-19 15:02:07 | DEBUG | P06 |   Mean: 4.12
+2026-06-19 15:02:07 | DEBUG | P06 |   Std Dev: 4.50
+2026-06-19 15:02:07 | DEBUG | P06 |   Min: 0.00
+2026-06-19 15:02:07 | DEBUG | P06 |   Max: 24.00
+2026-06-19 15:02:07 | DEBUG | P06 |   Range: 24.00
+2026-06-19 15:02:07 | INFO | P06 | --------------- Using pandas describe() method ---------------
+2026-06-19 15:02:07 | INFO | P06 | Computing overall descriptive statistics
+2026-06-19 15:02:07 | DEBUG | P06 | 
+                        count          mean           std          min           25%          50%           75%  \
+avail_seat_km_per_week   56.0  1.384621e+09  1.465317e+09  259373346.0  4.740362e+08  802908893.0  1.847239e+09   
+incidents_85_99          56.0  7.178571e+00  1.103566e+01          0.0  2.000000e+00          4.0  8.000000e+00   
+fatal_accidents_85_99    56.0  2.178571e+00  2.861069e+00          0.0  0.000000e+00          1.0  3.000000e+00   
+fatalities_85_99         56.0  1.124107e+02  1.466911e+02          0.0  0.000000e+00         48.5  1.842500e+02   
+incidents_00_14          56.0  4.125000e+00  4.544977e+00          0.0  1.000000e+00          3.0  5.250000e+00   
+
+                                 max  
+avail_seat_km_per_week  7.139291e+09  
+incidents_85_99         7.600000e+01  
+fatal_accidents_85_99   1.400000e+01  
+fatalities_85_99        5.350000e+02  
+incidents_00_14         2.400000e+01  
+2026-06-19 15:02:07 | INFO | P06 | --------------- Using pandas groupby() and agg() ---------------
+2026-06-19 15:02:07 | INFO | P06 | Computing descriptive statistics by group
+2026-06-19 15:02:07 | DEBUG | P06 | 
+                           avail_seat_km_per_week                                           incidents_85_99            \
+                                            count          mean std         min         max           count  mean std   
+airline                                                                                                                 
+Aer Lingus                                      1  3.209067e+08 NaN   320906734   320906734               1   2.0 NaN   
+Aeroflot*                                       1  1.197672e+09 NaN  1197672318  1197672318               1  76.0 NaN   
+Aerolineas Argentinas                           1  3.858036e+08 NaN   385803648   385803648               1   6.0 NaN   
+Aeromexico*                                     1  5.968718e+08 NaN   596871813   596871813               1   3.0 NaN   
+Air Canada                                      1  1.865254e+09 NaN  1865253802  1865253802               1   2.0 NaN   
+Air France                                      1  3.004003e+09 NaN  3004002661  3004002661               1  14.0 NaN   
+Air India*                                      1  8.692536e+08 NaN   869253552   869253552               1   2.0 NaN   
+Air New Zealand*                                1  7.101748e+08 NaN   710174817   710174817               1   3.0 NaN   
+Alaska Airlines*                                1  9.653468e+08 NaN   965346773   965346773               1   5.0 NaN   
+Alitalia                                        1  6.980125e+08 NaN   698012498   698012498               1   7.0 NaN   
+All Nippon Airways                              1  1.841234e+09 NaN  1841234177  1841234177               1   3.0 NaN   
+American*                                       1  5.228357e+09 NaN  5228357340  5228357340               1  21.0 NaN   
+Austrian Airlines                               1  3.582398e+08 NaN   358239823   358239823               1   1.0 NaN   
+Avianca                                         1  3.969226e+08 NaN   396922563   396922563               1   5.0 NaN   
+British Airways*                                1  3.179761e+09 NaN  3179760952  3179760952               1   4.0 NaN   
+COPA                                            1  5.504915e+08 NaN   550491507   550491507               1   3.0 NaN   
+Cathay Pacific*                                 1  2.582459e+09 NaN  2582459303  2582459303               1   0.0 NaN   
+China Airlines                                  1  8.132165e+08 NaN   813216487   813216487               1  12.0 NaN   
+Condor                                          1  4.179826e+08 NaN   417982610   417982610               1   2.0 NaN   
+Delta / Northwest*                              1  6.525659e+09 NaN  6525658894  6525658894               1  24.0 NaN   
+Egyptair                                        1  5.576999e+08 NaN   557699891   557699891               1   8.0 NaN   
+El Al                                           1  3.354480e+08 NaN   335448023   335448023               1   1.0 NaN   
+Ethiopian Airlines                              1  4.885606e+08 NaN   488560643   488560643               1  25.0 NaN   
+Finnair                                         1  5.064650e+08 NaN   506464950   506464950               1   1.0 NaN   
+Garuda Indonesia                                1  6.133567e+08 NaN   613356665   613356665               1  10.0 NaN   
+Gulf Air                                        1  3.013798e+08 NaN   301379762   301379762               1   1.0 NaN   
+Hawaiian Airlines                               1  4.938778e+08 NaN   493877795   493877795               1   0.0 NaN   
+Iberia                                          1  1.173203e+09 NaN  1173203126  1173203126               1   4.0 NaN   
+Japan Airlines                                  1  1.574218e+09 NaN  1574217531  1574217531               1   3.0 NaN   
+KLM*                                            1  1.874562e+09 NaN  1874561773  1874561773               1   7.0 NaN   
+Kenya Airways                                   1  2.774148e+08 NaN   277414794   277414794               1   2.0 NaN   
+Korean Air                                      1  1.734523e+09 NaN  1734522605  1734522605               1  12.0 NaN   
+LAN Airlines                                    1  1.001966e+09 NaN  1001965891  1001965891               1   3.0 NaN   
+Lufthansa*                                      1  3.426530e+09 NaN  3426529504  3426529504               1   6.0 NaN   
+Malaysia Airlines                               1  1.039171e+09 NaN  1039171244  1039171244               1   3.0 NaN   
+Pakistan International                          1  3.485631e+08 NaN   348563137   348563137               1   8.0 NaN   
+Philippine Airlines                             1  4.130072e+08 NaN   413007158   413007158               1   7.0 NaN   
+Qantas*                                         1  1.917429e+09 NaN  1917428984  1917428984               1   1.0 NaN   
+Royal Air Maroc                                 1  2.957053e+08 NaN   295705339   295705339               1   5.0 NaN   
+SAS*                                            1  6.829719e+08 NaN   682971852   682971852               1   5.0 NaN   
+SWISS*                                          1  7.926013e+08 NaN   792601299   792601299               1   2.0 NaN   
+Saudi Arabian                                   1  8.596739e+08 NaN   859673901   859673901               1   7.0 NaN   
+Singapore Airlines                              1  2.376858e+09 NaN  2376857805  2376857805               1   2.0 NaN   
+South African                                   1  6.515024e+08 NaN   651502442   651502442               1   2.0 NaN   
+Southwest Airlines                              1  3.276526e+09 NaN  3276525770  3276525770               1   1.0 NaN   
+Sri Lankan / AirLanka                           1  3.255830e+08 NaN   325582976   325582976               1   2.0 NaN   
+TACA                                            1  2.593733e+08 NaN   259373346   259373346               1   3.0 NaN   
+TAM                                             1  1.509196e+09 NaN  1509195646  1509195646               1   8.0 NaN   
+TAP - Air Portugal                              1  6.191308e+08 NaN   619130754   619130754               1   0.0 NaN   
+Thai Airways                                    1  1.702802e+09 NaN  1702802250  1702802250               1   8.0 NaN   
+Turkish Airlines                                1  1.946098e+09 NaN  1946098294  1946098294               1   8.0 NaN   
+US Airways / America West*                      1  2.455688e+09 NaN  2455687887  2455687887               1  16.0 NaN   
+United / Continental*                           1  7.139291e+09 NaN  7139291291  7139291291               1  19.0 NaN   
+Vietnam Airlines                                1  6.250849e+08 NaN   625084918   625084918               1   7.0 NaN   
+Virgin Atlantic                                 1  1.005249e+09 NaN  1005248585  1005248585               1   1.0 NaN   
+Xiamen Airlines                                 1  4.304630e+08 NaN   430462962   430462962               1   9.0 NaN   
+
+                                   fatal_accidents_85_99                   fatalities_85_99                       \
+                           min max                 count  mean std min max            count   mean std  min  max   
+airline                                                                                                            
+Aer Lingus                   2   2                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Aeroflot*                   76  76                     1  14.0 NaN  14  14                1  128.0 NaN  128  128   
+Aerolineas Argentinas        6   6                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Aeromexico*                  3   3                     1   1.0 NaN   1   1                1   64.0 NaN   64   64   
+Air Canada                   2   2                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Air France                  14  14                     1   4.0 NaN   4   4                1   79.0 NaN   79   79   
+Air India*                   2   2                     1   1.0 NaN   1   1                1  329.0 NaN  329  329   
+Air New Zealand*             3   3                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Alaska Airlines*             5   5                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Alitalia                     7   7                     1   2.0 NaN   2   2                1   50.0 NaN   50   50   
+All Nippon Airways           3   3                     1   1.0 NaN   1   1                1    1.0 NaN    1    1   
+American*                   21  21                     1   5.0 NaN   5   5                1  101.0 NaN  101  101   
+Austrian Airlines            1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Avianca                      5   5                     1   3.0 NaN   3   3                1  323.0 NaN  323  323   
+British Airways*             4   4                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+COPA                         3   3                     1   1.0 NaN   1   1                1   47.0 NaN   47   47   
+Cathay Pacific*              0   0                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+China Airlines              12  12                     1   6.0 NaN   6   6                1  535.0 NaN  535  535   
+Condor                       2   2                     1   1.0 NaN   1   1                1   16.0 NaN   16   16   
+Delta / Northwest*          24  24                     1  12.0 NaN  12  12                1  407.0 NaN  407  407   
+Egyptair                     8   8                     1   3.0 NaN   3   3                1  282.0 NaN  282  282   
+El Al                        1   1                     1   1.0 NaN   1   1                1    4.0 NaN    4    4   
+Ethiopian Airlines          25  25                     1   5.0 NaN   5   5                1  167.0 NaN  167  167   
+Finnair                      1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Garuda Indonesia            10  10                     1   3.0 NaN   3   3                1  260.0 NaN  260  260   
+Gulf Air                     1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Hawaiian Airlines            0   0                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Iberia                       4   4                     1   1.0 NaN   1   1                1  148.0 NaN  148  148   
+Japan Airlines               3   3                     1   1.0 NaN   1   1                1  520.0 NaN  520  520   
+KLM*                         7   7                     1   1.0 NaN   1   1                1    3.0 NaN    3    3   
+Kenya Airways                2   2                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Korean Air                  12  12                     1   5.0 NaN   5   5                1  425.0 NaN  425  425   
+LAN Airlines                 3   3                     1   2.0 NaN   2   2                1   21.0 NaN   21   21   
+Lufthansa*                   6   6                     1   1.0 NaN   1   1                1    2.0 NaN    2    2   
+Malaysia Airlines            3   3                     1   1.0 NaN   1   1                1   34.0 NaN   34   34   
+Pakistan International       8   8                     1   3.0 NaN   3   3                1  234.0 NaN  234  234   
+Philippine Airlines          7   7                     1   4.0 NaN   4   4                1   74.0 NaN   74   74   
+Qantas*                      1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Royal Air Maroc              5   5                     1   3.0 NaN   3   3                1   51.0 NaN   51   51   
+SAS*                         5   5                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+SWISS*                       2   2                     1   1.0 NaN   1   1                1  229.0 NaN  229  229   
+Saudi Arabian                7   7                     1   2.0 NaN   2   2                1  313.0 NaN  313  313   
+Singapore Airlines           2   2                     1   2.0 NaN   2   2                1    6.0 NaN    6    6   
+South African                2   2                     1   1.0 NaN   1   1                1  159.0 NaN  159  159   
+Southwest Airlines           1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Sri Lankan / AirLanka        2   2                     1   1.0 NaN   1   1                1   14.0 NaN   14   14   
+TACA                         3   3                     1   1.0 NaN   1   1                1    3.0 NaN    3    3   
+TAM                          8   8                     1   3.0 NaN   3   3                1   98.0 NaN   98   98   
+TAP - Air Portugal           0   0                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Thai Airways                 8   8                     1   4.0 NaN   4   4                1  308.0 NaN  308  308   
+Turkish Airlines             8   8                     1   3.0 NaN   3   3                1   64.0 NaN   64   64   
+US Airways / America West*  16  16                     1   7.0 NaN   7   7                1  224.0 NaN  224  224   
+United / Continental*       19  19                     1   8.0 NaN   8   8                1  319.0 NaN  319  319   
+Vietnam Airlines             7   7                     1   3.0 NaN   3   3                1  171.0 NaN  171  171   
+Virgin Atlantic              1   1                     1   0.0 NaN   0   0                1    0.0 NaN    0    0   
+Xiamen Airlines              9   9                     1   1.0 NaN   1   1                1   82.0 NaN   82   82   
+
+                           incidents_00_14                    
+                                     count  mean std min max  
+airline                                                       
+Aer Lingus                               1   0.0 NaN   0   0  
+Aeroflot*                                1   6.0 NaN   6   6  
+Aerolineas Argentinas                    1   1.0 NaN   1   1  
+Aeromexico*                              1   5.0 NaN   5   5  
+Air Canada                               1   2.0 NaN   2   2  
+Air France                               1   6.0 NaN   6   6  
+Air India*                               1   4.0 NaN   4   4  
+Air New Zealand*                         1   5.0 NaN   5   5  
+Alaska Airlines*                         1   5.0 NaN   5   5  
+Alitalia                                 1   4.0 NaN   4   4  
+All Nippon Airways                       1   7.0 NaN   7   7  
+American*                                1  17.0 NaN  17  17  
+Austrian Airlines                        1   1.0 NaN   1   1  
+Avianca                                  1   0.0 NaN   0   0  
+British Airways*                         1   6.0 NaN   6   6  
+COPA                                     1   0.0 NaN   0   0  
+Cathay Pacific*                          1   2.0 NaN   2   2  
+China Airlines                           1   2.0 NaN   2   2  
+Condor                                   1   0.0 NaN   0   0  
+Delta / Northwest*                       1  24.0 NaN  24  24  
+Egyptair                                 1   4.0 NaN   4   4  
+El Al                                    1   1.0 NaN   1   1  
+Ethiopian Airlines                       1   5.0 NaN   5   5  
+Finnair                                  1   0.0 NaN   0   0  
+Garuda Indonesia                         1   4.0 NaN   4   4  
+Gulf Air                                 1   3.0 NaN   3   3  
+Hawaiian Airlines                        1   1.0 NaN   1   1  
+Iberia                                   1   5.0 NaN   5   5  
+Japan Airlines                           1   0.0 NaN   0   0  
+KLM*                                     1   1.0 NaN   1   1  
+Kenya Airways                            1   2.0 NaN   2   2  
+Korean Air                               1   1.0 NaN   1   1  
+LAN Airlines                             1   0.0 NaN   0   0  
+Lufthansa*                               1   3.0 NaN   3   3  
+Malaysia Airlines                        1   3.0 NaN   3   3  
+Pakistan International                   1  10.0 NaN  10  10  
+Philippine Airlines                      1   2.0 NaN   2   2  
+Qantas*                                  1   5.0 NaN   5   5  
+Royal Air Maroc                          1   3.0 NaN   3   3  
+SAS*                                     1   6.0 NaN   6   6  
+SWISS*                                   1   3.0 NaN   3   3  
+Saudi Arabian                            1  11.0 NaN  11  11  
+Singapore Airlines                       1   2.0 NaN   2   2  
+South African                            1   1.0 NaN   1   1  
+Southwest Airlines                       1   8.0 NaN   8   8  
+Sri Lankan / AirLanka                    1   4.0 NaN   4   4  
+TACA                                     1   1.0 NaN   1   1  
+TAM                                      1   7.0 NaN   7   7  
+TAP - Air Portugal                       1   0.0 NaN   0   0  
+Thai Airways                             1   2.0 NaN   2   2  
+Turkish Airlines                         1   8.0 NaN   8   8  
+US Airways / America West*               1  11.0 NaN  11  11  
+United / Continental*                    1  14.0 NaN  14  14  
+Vietnam Airlines                         1   1.0 NaN   1   1  
+Virgin Atlantic                          1   0.0 NaN   0   0  
+Xiamen Airlines                          1   2.0 NaN   2   2  
+2026-06-19 15:02:07 | INFO | P06 | 
+Stacked view - easier to read in logs:
+2026-06-19 15:02:07 | DEBUG | P06 | 
+                                        count         mean  std        min        max
+airline                                                                              
+Aer Lingus      avail_seat_km_per_week      1  320906734.0  NaN  320906734  320906734
+                incidents_85_99             1          2.0  NaN          2          2
+                fatal_accidents_85_99       1          0.0  NaN          0          0
+                fatalities_85_99            1          0.0  NaN          0          0
+                incidents_00_14             1          0.0  NaN          0          0
+...                                       ...          ...  ...        ...        ...
+Xiamen Airlines avail_seat_km_per_week      1  430462962.0  NaN  430462962  430462962
+                incidents_85_99             1          9.0  NaN          9          9
+                fatal_accidents_85_99       1          1.0  NaN          1          1
+                fatalities_85_99            1         82.0  NaN         82         82
+                incidents_00_14             1          2.0  NaN          2          2
+
+[280 rows x 5 columns]
+2026-06-19 15:02:07 | INFO | P06 | --- Section 7: Correlation matrix for numeric columns ---
+2026-06-19 15:02:07 | INFO | P06 | Computing correlation matrix for numeric columns
+2026-06-19 15:02:07 | INFO | P06 | 
+Correlation matrix:
+2026-06-19 15:02:07 | DEBUG | P06 | 
+                        avail_seat_km_per_week  incidents_85_99  fatal_accidents_85_99  fatalities_85_99  \
+avail_seat_km_per_week                1.000000         0.279538               0.468300          0.209835   
+incidents_85_99                       0.279538         1.000000               0.856991          0.274394   
+fatal_accidents_85_99                 0.468300         0.856991               1.000000          0.540866   
+fatalities_85_99                      0.209835         0.274394               0.540866          1.000000   
+incidents_00_14                       0.725917         0.403009               0.572923          0.273696   
+
+                        incidents_00_14  
+avail_seat_km_per_week         0.725917  
+incidents_85_99                0.403009  
+fatal_accidents_85_99          0.572923  
+fatalities_85_99               0.273696  
+incidents_00_14                1.000000  
+2026-06-19 15:02:07 | INFO | P06 | ---------Visualize Correlation Matrix as a Heatmap---------------
+2026-06-19 15:02:08 | INFO | P06 | 
+CUSTOM: Update these notes and use Markdown cells to narrate and tell the story as you explore. For example:
+
+Interpretation:
+
+ - Values close to 1 (dark red) = strong positive correlation (both increase together)
+ - Values close to -1 (dark blue) = strong negative correlation (one increases, other decreases)
+ - Values close to 0 (white) = little or no linear relationship
+ - The diagonal is always 1 (each variable correlates perfectly with itself)
+
+From this heatmap, we can see that flipper_length_mm and body_mass_g show strong positive correlation (~0.87).
+
+2026-06-19 15:02:08 | INFO | P06 | --- Section 8: Charts ---
+2026-06-19 15:02:08 | INFO | P06 | ---- Creating Scatter Plot to see Relationships ------
+2026-06-19 15:02:08 | INFO | P06 | ----   Use clean dataframe ---------------------------
+2026-06-19 15:02:08 | INFO | P06 | ----   Set x to Incidents 1985-1999 -----------------------
+2026-06-19 15:02:08 | INFO | P06 | ----   Set y to Incidents 2000-2014 --------------------------
+2026-06-19 15:02:08 | INFO | P06 | ----   Set the hue (color mapping) to the group column --
+2026-06-19 15:02:09 | INFO | P06 | ------ Creating Box Plot to see Distribution: ---------
+2026-06-19 15:02:09 | INFO | P06 | ------   Use clean dataframe --------------------------
+2026-06-19 15:02:09 | INFO | P06 | ------   Set x to the group column --------------------
+2026-06-19 15:02:09 | INFO | P06 | ------   Set y to Fatalities 1985-1999 ----------------------
+2026-06-19 15:02:10 | INFO | P06 | --- Section 9: Summary and next steps ---
+2026-06-19 15:02:10 | INFO | P06 | ========================
+2026-06-19 15:02:10 | INFO | P06 | SUMMARY
+2026-06-19 15:02:10 | INFO | P06 | ========================
+2026-06-19 15:02:10 | INFO | P06 | Dataset: airline-safety
+2026-06-19 15:02:10 | INFO | P06 | Original rows: 56
+2026-06-19 15:02:10 | INFO | P06 | Clean rows:    56
+2026-06-19 15:02:10 | INFO | P06 | Groups found in airline: ['Aer Lingus', 'Aeroflot*', 'Aerolineas Argentinas', 'Aeromexico*', 'Air Canada', 'Air France', 'Air India*', 'Air New Zealand*', 'Alaska Airlines*', 'Alitalia', 'All Nippon Airways', 'American*', 'Austrian Airlines', 'Avianca', 'British Airways*', 'COPA', 'Cathay Pacific*', 'China Airlines', 'Condor', 'Delta / Northwest*', 'Egyptair', 'El Al', 'Ethiopian Airlines', 'Finnair', 'Garuda Indonesia', 'Gulf Air', 'Hawaiian Airlines', 'Iberia', 'Japan Airlines', 'KLM*', 'Kenya Airways', 'Korean Air', 'LAN Airlines', 'Lufthansa*', 'Malaysia Airlines', 'Pakistan International', 'Philippine Airlines', 'Qantas*', 'Royal Air Maroc', 'SAS*', 'SWISS*', 'Saudi Arabian', 'Singapore Airlines', 'South African', 'Southwest Airlines', 'Sri Lankan / AirLanka', 'TACA', 'TAM', 'TAP - Air Portugal', 'Thai Airways', 'Turkish Airlines', 'US Airways / America West*', 'United / Continental*', 'Vietnam Airlines', 'Virgin Atlantic', 'Xiamen Airlines']
+2026-06-19 15:02:10 | INFO | P06 | ======================
+2026-06-19 15:02:10 | INFO | P06 | Review the results. 
+2026-06-19 15:02:10 | INFO | P06 | Determine the strongest correlations. 
+2026-06-19 15:02:10 | INFO | P06 | ======================
+2026-06-19 15:02:10 | INFO | P06 | Look for interesting patterns in the charts. 
+2026-06-19 15:02:10 | INFO | P06 | Repeat the process, exploring additional angles.
+2026-06-19 15:02:10 | INFO | P06 | After finding interesting insights, conclude your analysis.
+2026-06-19 15:02:10 | INFO | P06 | ======================
+2026-06-19 15:02:10 | INFO | P06 | Include instructions and specifics in your README.md file.
+2026-06-19 15:02:10 | INFO | P06 | Write up your narrative on your docs/index.md file.
+2026-06-19 15:02:10 | INFO | P06 | Include your next step suggestions for further analysis or modeling.
+2026-06-19 15:02:10 | INFO | P06 | ======================
+2026-06-19 15:02:10 | INFO | P06 | Alecia custom modification: additional analysis checkpoint reached
+2026-06-19 15:02:10 | INFO | P06 | ----- in a script, call plt.show() once at the end to display all charts -----
+2026-06-19 15:02:10 | INFO | P06 | ----- in a script, close the chart windows (with the close button) to continue  -----
+2026-06-19 15:02:11 | INFO | P06 | EDA workflow complete
+2026-06-19 15:02:11 | INFO | P06 | IMPORTANT: This script creates chart windows.
+2026-06-19 15:02:11 | INFO | P06 | Close any chart windows and terminate this process with CTRL+c as needed.
+2026-06-19 15:02:11 | INFO | P06 | ========================
+2026-06-19 15:02:11 | INFO | P06 | Executed successfully!
+2026-06-19 15:02:11 | INFO | P06 | ========================

@@ -29,3 +29,43 @@ For Phase 4, I created a modified version of the example Python file called `app
 I added an additional logging statement to improve observability and verify my modified project was running independently from the original example.
 
 This helped me better understand how logging can be used to track execution and how small changes can safely modify a working project.
+
+# Custom Project – Airline Safety Analysis
+
+For my Phase 5 custom project, I selected a real-world dataset from FiveThirtyEight that examines airline safety records over time.
+
+## Goal of the Project
+
+The goal was to analyze airline incidents and fatalities and compare trends between two historical periods.
+
+The project focused on the following questions:
+
+- Which airlines had the highest number of incidents?
+- How did airline safety change over time?
+- Are earlier incidents related to later incidents?
+
+## Visualizations
+
+### Airline Incident Comparison
+
+This scatter plot compares airline incidents during two different time periods.
+
+![Scatter Plot](airline_scatter.png)
+
+### Airline Fatalities Distribution
+
+This box plot compares fatalities across airlines.
+
+![Box Plot](airline_boxplot.png)
+
+## What I Learned
+
+This project helped me better understand how to adapt an existing analytics workflow to a completely new dataset.
+
+I learned how to:
+
+- import a new CSV dataset
+- choose variables for analysis
+- modify Python code safely
+- improve chart readability
+- document results professionally

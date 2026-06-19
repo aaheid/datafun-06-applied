@@ -54,7 +54,11 @@ features = [
     "toc.integrate", # WHY: Integrate table of contents into navigation.
     "navigation.top", # WHY: Add a back-to-top button.
 ]
+author = "Alecia Heiderscheit"
 
+site_name = "Alecia Heiderscheit Applied Analytics Project"
+
+description = "Custom exploratory data analysis project using airline safety data to analyze incidents and fatalities across airlines over time."
 # ------------------------------------------------------------
 # Navigation
 # ------------------------------------------------------------
