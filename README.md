@@ -281,6 +281,22 @@ The analysis showed that some airlines experienced significantly higher accident
 
 Comparing two historical time periods helped identify changes in airline safety trends over time.
 
+## Project Visualizations
+
+### Airline Incident Comparison
+
+This scatter plot compares airline incident rates between 1985–1999 and 2000–2014.
+
+![Airline Scatter Plot](docs/airline_scatter.png)
+
+---
+
+### Airline Fatalities by Airline
+
+This box plot compares airline fatalities and highlights variation across airlines.
+
+![Airline Box Plot](docs/airline_boxplot.png)
+
 ### Skills Practiced
 
 This project helped me practice:
